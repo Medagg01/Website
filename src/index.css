@@ -1,5 +1,6 @@
-
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* ----------------------------------
    Custom Global Styles for MedAgg
@@ -40,6 +41,7 @@ p {
 a {
   @apply text-blue-700 hover:underline transition duration-200;
 }
+
 .btn-primary {
   @apply bg-blue-700 text-white px-6 py-2 rounded-md hover:bg-blue-800 transition;
 }
@@ -55,3 +57,5 @@ a {
 .section {
   @apply py-16 px-4;
 }
+
+/* Custom styles can go here if needed */
