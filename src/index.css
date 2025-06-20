@@ -14,8 +14,10 @@
   --bg-light: #f9fafb;   
 }
 
-body {
-  @apply text-base text-gray-800 bg-white font-sans antialiased;
+@layer base {
+  body {
+    @apply text-base text-gray-800 bg-white font-sans antialiased;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {

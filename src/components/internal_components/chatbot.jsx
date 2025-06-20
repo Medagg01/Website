@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { treatments } from '../data/treatments';
+import { treatments } from '../../data/treatments';
 import { Link } from 'react-router-dom';
 
 // Constants defined outside the component
@@ -286,58 +286,10 @@ const Chatbot = () => {
                   </div>
                 </div>
               </div>
-              <div className="mt-2">
-                <button 
-                  onClick={() => handleQuickResponse('Emergency help')}
-                  className="w-full text-left p-3 bg-white hover:bg-red-50 rounded-xl border border-red-100 hover:border-red-200 transition-all hover:shadow-sm flex items-center"
-                >
-                  <div className="bg-red-100 p-1.5 rounded-full mr-3">
-                    <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="font-medium text-gray-800 group-hover:text-red-600">Emergency Assistance</div>
-                    <div className="text-xs text-gray-500">Get immediate help</div>
-                  </div>
-                </button>
-              </div>
+              {/* Emergency Assistance button removed */}
             </div>
           </div>
-          {/* Quick actions */}
-          <div className="p-4 bg-gradient-to-b from-white to-gray-50 border-b border-gray-100">
-            <p className="text-sm font-medium text-gray-700 mb-3">How can I help you today?</p>
-            <div className="grid grid-cols-2 gap-2">
-              <button 
-                onClick={() => handleQuickResponse('Book an appointment')}
-                className="group text-left p-3 bg-white hover:bg-pink-50 rounded-xl border border-gray-100 hover:border-pink-100 transition-all hover:shadow-sm"
-              >
-                <div className="font-medium text-gray-800 group-hover:text-pink-600">Book an appointment</div>
-                <div className="text-xs text-gray-500 group-hover:text-pink-400">Schedule with a doctor</div>
-              </button>
-              <button 
-                onClick={() => handleQuickResponse('Find a specialist')}
-                className="group text-left p-3 bg-white hover:bg-pink-50 rounded-xl border border-gray-100 hover:border-pink-100 transition-all hover:shadow-sm"
-              >
-                <div className="font-medium text-gray-800 group-hover:text-pink-600">Find a specialist</div>
-                <div className="text-xs text-gray-500 group-hover:text-pink-400">Search by specialty</div>
-              </button>
-              <button 
-                onClick={() => handleQuickResponse('View medical records')}
-                className="group text-left p-3 bg-white hover:bg-pink-50 rounded-xl border border-gray-100 hover:border-pink-100 transition-all hover:shadow-sm"
-              >
-                <div className="font-medium text-gray-800 group-hover:text-pink-600">Medical records</div>
-                <div className="text-xs text-gray-500 group-hover:text-pink-400">View your health data</div>
-              </button>
-              <button 
-                onClick={() => handleQuickResponse('Emergency help')}
-                className="group text-left p-3 bg-white hover:bg-red-50 rounded-xl border border-gray-100 hover:border-red-100 transition-all hover:shadow-sm"
-              >
-                <div className="font-medium text-gray-800 group-hover:text-red-600">Emergency</div>
-                <div className="text-xs text-gray-500 group-hover:text-red-400">Get help now</div>
-              </button>
-            </div>
-          </div>
+          {/* Quick actions section removed */}
 
           {/* Messages */}
           <div 
