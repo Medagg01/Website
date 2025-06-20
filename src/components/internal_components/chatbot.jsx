@@ -1,20 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { treatments } from '../data/treatments';
 import { Link } from 'react-router-dom';
-import SecNavbar from '../layout/SecNavbar';
-
-// Import treatments from SecNavbar
-const treatments = [
-  'Knee pain',
-  'Enlarged Prostate',
-  'Thyroid Nodule',
-  'Varicocele',
-  'Fallopian Tube Block',
-  'Uterine Fibroids',
-  'Varicose Veins',
-  'Interventional Cardiology',
-  'Interventional Neurology',
-  'Interventional Oncology'
-];
 
 // Constants defined outside the component
 const predefinedResponses = {
@@ -65,6 +51,7 @@ const Chatbot = () => {
   const [messages, setMessages] = useState(initialMessages);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
+  const [activeCondition, setActiveCondition] = useState(null);
   const [isListening, setIsListening] = useState(false);
   const messagesEndRef = useRef(null);
   const recognitionRef = useRef(null);
@@ -206,7 +193,7 @@ const Chatbot = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-8 right-8 z-50">
       <button
         onClick={toggleChat}
         className={`w-20 h-20 rounded-full shadow-2xl overflow-hidden transition-all duration-300 transform hover:scale-110 ${isOpen ? 'scale-0' : 'scale-100'}`}
@@ -315,6 +302,40 @@ const Chatbot = () => {
                   </div>
                 </button>
               </div>
+            </div>
+          </div>
+          {/* Quick actions */}
+          <div className="p-4 bg-gradient-to-b from-white to-gray-50 border-b border-gray-100">
+            <p className="text-sm font-medium text-gray-700 mb-3">How can I help you today?</p>
+            <div className="grid grid-cols-2 gap-2">
+              <button 
+                onClick={() => handleQuickResponse('Book an appointment')}
+                className="group text-left p-3 bg-white hover:bg-pink-50 rounded-xl border border-gray-100 hover:border-pink-100 transition-all hover:shadow-sm"
+              >
+                <div className="font-medium text-gray-800 group-hover:text-pink-600">Book an appointment</div>
+                <div className="text-xs text-gray-500 group-hover:text-pink-400">Schedule with a doctor</div>
+              </button>
+              <button 
+                onClick={() => handleQuickResponse('Find a specialist')}
+                className="group text-left p-3 bg-white hover:bg-pink-50 rounded-xl border border-gray-100 hover:border-pink-100 transition-all hover:shadow-sm"
+              >
+                <div className="font-medium text-gray-800 group-hover:text-pink-600">Find a specialist</div>
+                <div className="text-xs text-gray-500 group-hover:text-pink-400">Search by specialty</div>
+              </button>
+              <button 
+                onClick={() => handleQuickResponse('View medical records')}
+                className="group text-left p-3 bg-white hover:bg-pink-50 rounded-xl border border-gray-100 hover:border-pink-100 transition-all hover:shadow-sm"
+              >
+                <div className="font-medium text-gray-800 group-hover:text-pink-600">Medical records</div>
+                <div className="text-xs text-gray-500 group-hover:text-pink-400">View your health data</div>
+              </button>
+              <button 
+                onClick={() => handleQuickResponse('Emergency help')}
+                className="group text-left p-3 bg-white hover:bg-red-50 rounded-xl border border-gray-100 hover:border-red-100 transition-all hover:shadow-sm"
+              >
+                <div className="font-medium text-gray-800 group-hover:text-red-600">Emergency</div>
+                <div className="text-xs text-gray-500 group-hover:text-red-400">Get help now</div>
+              </button>
             </div>
           </div>
 
@@ -476,4 +497,4 @@ const Chatbot = () => {
   );
 };
 
-export default Chatbot; 
+export default Chatbot;
