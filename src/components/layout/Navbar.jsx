@@ -7,11 +7,18 @@ const Navbar = () => {
         <FaHeartbeat /> MedAgg
       </div>
       <div className="space-x-6 text-gray-700">
+<<<<<<< HEAD
         <a href="/about">About</a>
         <a href="/services">Services</a>
         <a href="/contact">Contact</a>
         <a href="/join">Join Us</a>
         <a href="/investor">Become an Investor</a>
+=======
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/contact">Contact</a>
+>>>>>>> origin/main
       </div>
     </nav>
   );

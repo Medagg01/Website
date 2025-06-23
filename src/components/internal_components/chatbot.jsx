@@ -51,7 +51,10 @@ const Chatbot = () => {
   const [messages, setMessages] = useState(initialMessages);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
+<<<<<<< HEAD
   const [activeCondition, setActiveCondition] = useState(null);
+=======
+>>>>>>> origin/main
   const [isListening, setIsListening] = useState(false);
   const messagesEndRef = useRef(null);
   const recognitionRef = useRef(null);
