@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Footer from './components/layout/Footer';
 import Home from './pages/Home';
 import Chatbot from './components/internal_components/chatbot';
+import PAE_Treatmentpage from './pages/PAE_Treatmentpage';
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/pae" element={<PAE_Treatmentpage />} />
         </Routes>
       </main>
       <Footer />

@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 
 const treatments = [
   {
@@ -58,6 +59,7 @@ const ArrowButton = ({ highlight }) => (
 );
 
 const OurServiceSection = () => {
+  const navigate = useNavigate();
   return (
     <section className="w-full bg-white">
       <div className="max-w-7xl mx-auto px-4 py-8 flex flex-col items-center">
@@ -71,7 +73,12 @@ const OurServiceSection = () => {
           {treatments.map((t, idx) => (
             <div
               key={t.title}
-              className="bg-white rounded-2xl shadow-lg p-6 flex flex-col justify-between min-h-[220px] transition-transform hover:-translate-y-1 hover:shadow-xl"
+              className="bg-white rounded-2xl shadow-lg p-6 flex flex-col justify-between min-h-[220px] transition-transform hover:-translate-y-1 hover:shadow-xl cursor-pointer"
+              onClick={() => {
+                if (t.title === "Prostate Artery Embolization") {
+                  navigate('/pae');
+                }
+              }}
             >
               <div>
                 <h3 className="text-lg font-bold text-[#1a1446] mb-2 leading-snug">{t.title}</h3>
