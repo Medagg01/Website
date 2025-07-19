@@ -4,6 +4,7 @@ import Footer from './components/layout/Footer';
 import Home from './pages/Home';
 import Chatbot from './components/internal_components/chatbot';
 import PAE_Treatmentpage from './pages/PAE_Treatmentpage';
+import About from './pages/About';
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/pae" element={<PAE_Treatmentpage />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </main>
       <Footer />
