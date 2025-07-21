@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const socialIcons = [
   { src: "/facebook%20.jpg", alt: "Facebook" },
@@ -16,6 +17,34 @@ const stats = [
 const popularSearches = ["Knee Pain", "Breast Nodule", "Thyroid", "Prostate"];
 
 const HeroSection = () => {
+  const [query, setQuery] = useState("");
+  const [searchResult, setSearchResult] = useState(null);
+
+  // Keywords to trigger PAE page suggestion
+  const paeTriggers = [
+    "prostate", "pae", "bph", "turp", "embolization", "enlarged prostate", "benign prostatic hyperplasia"
+  ];
+
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    setQuery(value);
+    const lowerCaseQuery = value.toLowerCase();
+    const isPaeRelated = paeTriggers.some(trigger => lowerCaseQuery.includes(trigger));
+    if (isPaeRelated) {
+      setSearchResult({
+        name: "Prostate Artery Embolization (PAE)",
+        path: "/pae",
+      });
+    } else {
+      setSearchResult(null);
+    }
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    // No need to do anything here, as results are shown live
+  };
+
   return (
     <section
       className="relative w-full min-h-[600px] bg-cover bg-center rounded-none overflow-hidden"
@@ -60,7 +89,9 @@ const HeroSection = () => {
             </h1>
             
             {/* Search Bar */}
-            <form className="flex items-center bg-white rounded-xl overflow-hidden shadow-lg mt-6 max-w-lg w-full border border-gray-100">
+            <form 
+              onSubmit={handleSearch}
+              className="flex items-center bg-white rounded-xl overflow-hidden shadow-lg mt-6 max-w-lg w-full border border-gray-100">
               <span className="pl-5 text-gray-400 flex-shrink-0">
                 <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <circle cx="11" cy="11" r="8" />
@@ -71,6 +102,8 @@ const HeroSection = () => {
                 type="text"
                 placeholder="Facing symptoms? Type them in"
                 className="flex-1 px-4 py-4 outline-none text-gray-700 bg-transparent placeholder-gray-500 text-base font-medium"
+                value={query}
+                onChange={handleInputChange}
               />
               <button
                 type="submit"
@@ -82,6 +115,14 @@ const HeroSection = () => {
                 </svg>
               </button>
             </form>
+            {searchResult && (
+              <div className="mt-4 bg-white/10 backdrop-blur-sm p-4 rounded-lg max-w-lg w-full">
+                <p className="text-white/90 font-medium mb-1">Suggested result:</p>
+                <Link to={searchResult.path} className="text-xl font-bold text-white hover:text-pink-400 transition-colors">
+                  {searchResult.name}
+                </Link>
+              </div>
+            )}
             <div className="mt-4 text-sm font-medium text-white/90">
               Popular Search :
             </div>

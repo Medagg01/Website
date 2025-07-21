@@ -38,16 +38,16 @@ const cards = [
 
 export default function Type_of_paients_about() {
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 py-16">
+    <section className="w-full max-w-7xl mx-auto px-4 py-16 bg-white">
       <h2 className="text-3xl md:text-4xl font-extrabold text-[#2D2552] mb-2">
         Types of Patients <span className="text-pink-500">We Serve</span>
       </h2>
       <p className="text-gray-500 text-base md:text-lg mb-10 max-w-2xl">
         No matter where you are in your healthcare journey, we’re here to help you find the right path forward.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-white">
         {cards.map((card, idx) => (
-          <div key={idx} className="bg-white rounded-2xl shadow p-0 flex flex-col overflow-hidden border border-gray-100">
+          <div key={idx} className="bg-white rounded-2xl shadow p-0 flex flex-col overflow-hidden border border-gray-100 flex-1 min-w-0">
             <img src={card.img} alt={card.type} className="w-full h-48 object-cover rounded-t-2xl" />
             <div className="p-6 flex flex-col flex-1">
               <span className={`inline-block w-auto min-w-[48px] max-w-[70px] px-2 py-0.5 rounded-full text-xs font-semibold mb-3 mx-0 ${card.typeColor}`}>{card.type}</span>

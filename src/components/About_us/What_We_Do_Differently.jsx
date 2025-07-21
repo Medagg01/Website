@@ -40,16 +40,16 @@ const medagg = [
 
 export default function What_We_Do_Differently() {
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 py-16">
+    <section className="w-full max-w-7xl mx-auto px-4 py-16 bg-white">
       <h2 className="text-3xl md:text-4xl font-extrabold text-[#2D2552] mb-2">
         What We <span className="text-pink-500">Do Differently</span>
       </h2>
       <p className="text-gray-500 text-base md:text-lg mb-10 max-w-2xl">
         See how Medagg transforms the typical healthcare experience into something truly patient-centered.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-white">
         {/* Others Card */}
-        <div className="bg-[#f7f7fa] rounded-2xl p-8 flex flex-col shadow-sm border border-gray-100">
+        <div className="bg-[#f7f7fa] rounded-2xl p-8 flex flex-col shadow-sm border border-gray-100 flex-1 min-w-0">
           <div className="flex items-center gap-3 mb-6">
             <span className="bg-gray-300 rounded-full p-3">
               <svg className="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M3 21v-2a4 4 0 014-4h10a4 4 0 014 4v2" /><circle cx="12" cy="7" r="4" /></svg>
@@ -73,7 +73,7 @@ export default function What_We_Do_Differently() {
           </ul>
         </div>
         {/* Medagg Card */}
-        <div className="bg-[#fde7f3] rounded-2xl p-8 flex flex-col shadow-sm border border-pink-100">
+        <div className="bg-[#fde7f3] rounded-2xl p-8 flex flex-col shadow-sm border border-pink-100 flex-1 min-w-0">
           <div className="flex items-center gap-3 mb-6">
             <span className="bg-pink-400 rounded-full p-3">
               <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M3 21v-2a4 4 0 014-4h10a4 4 0 014 4v2" /><circle cx="12" cy="7" r="4" /></svg>

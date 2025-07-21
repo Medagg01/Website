@@ -30,10 +30,10 @@ const timeline = [
 
 export default function The_Story_of_Our_Transformation() {
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 py-16">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+    <section className="w-full max-w-7xl mx-auto px-4 py-16 bg-white">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start bg-white">
         {/* Left: Heading, subtitle, and card */}
-        <div>
+        <div className="flex flex-col flex-1 min-w-0">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#2D2552] mb-2">
             The Story of Our <br />
             <span className="text-pink-500">Transformation</span>
@@ -41,7 +41,7 @@ export default function The_Story_of_Our_Transformation() {
           <p className="text-gray-500 text-base md:text-lg mb-8 max-w-lg">
             Over the years, we’ve evolved with purpose, turning challenges into milestones and vision into reality.
           </p>
-          <div className="rounded-xl overflow-hidden shadow-lg w-full max-w-md mb-6">
+          <div className="rounded-xl overflow-hidden shadow-lg w-full max-w-md mb-6 bg-white">
             <div className="relative w-full h-48 md:h-56" style={{backgroundImage: "url('/book and appoinment background.jpg')", backgroundSize: 'cover', backgroundPosition: 'center'}}>
               <div className="absolute inset-0 bg-[#392C5C]/20" />
               <div className="relative z-10 flex flex-col h-full justify-center items-start p-6">
@@ -54,10 +54,10 @@ export default function The_Story_of_Our_Transformation() {
           </div>
         </div>
         {/* Right: Timeline */}
-        <div className="relative pl-0">
-          <div className="flex">
+        <div className="relative pl-0 flex-1 min-w-0">
+          <div className="flex w-full">
             {/* Timeline line and dots column */}
-            <div className="relative flex flex-col items-center w-12">
+            <div className="relative flex flex-col items-center w-12 min-w-0">
               {/* Vertical line */}
               <div className="absolute left-1/2 -translate-x-1/2 top-0 h-full w-1 bg-pink-400 rounded-full" style={{zIndex: 0}} />
               {timeline.map((item, idx) => (
@@ -67,7 +67,7 @@ export default function The_Story_of_Our_Transformation() {
               ))}
             </div>
             {/* Timeline content column */}
-            <div className="flex-1 flex flex-col justify-start">
+            <div className="flex-1 flex flex-col justify-start min-w-0">
               {timeline.map((item, idx) => (
                 <div key={item.year} className="pt-2 pb-10">
                   <div className="text-pink-500 font-bold text-lg mb-1">{item.year}</div>

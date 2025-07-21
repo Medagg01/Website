@@ -2,7 +2,7 @@ import React from "react";
 
 export default function About_Founder() {
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 py-16">
+    <section className="w-full max-w-7xl mx-auto px-4 py-16 bg-white">
       {/* Top: 3-column text */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
         <div>
@@ -23,7 +23,7 @@ export default function About_Founder() {
         </div>
       </div>
       {/* Middle: 3 feature cards */}
-      <div className="flex flex-col md:flex-row gap-6 justify-center mb-12">
+      <div className="flex flex-col md:flex-row gap-6 justify-center mb-12 bg-white">
         <div className="flex-1 bg-white rounded-xl shadow p-6 flex flex-col items-center text-center min-w-[220px]">
           <div className="bg-pink-500 rounded-full w-12 h-12 flex items-center justify-center mb-3">
             {/* Watch/clock icon */}
@@ -54,13 +54,13 @@ export default function About_Founder() {
         </div>
       </div>
       {/* Bottom: 2-column images/videos */}
-      <div className="media-container w-full min-h-[340px] bg-[#fceff9] rounded-[16px] p-6 md:p-8 shadow-lg max-w-[1200px] mx-auto flex flex-col md:flex-row gap-8 items-stretch justify-center">
-        <div className="image-block basis-1/2 max-w-[50%] flex justify-center items-center h-full">
-          <img src="/About_sir_ma'am.jpg" alt="Founders" className="team-image w-full h-full max-w-[500px] rounded-[12px] shadow-md object-cover" />
+      <div className="media-container w-full min-h-[340px] bg-white rounded-[16px] p-6 md:p-8 shadow-lg max-w-[1200px] mx-auto flex flex-col md:flex-row gap-8 items-stretch justify-center overflow-hidden">
+        <div className="image-block basis-1/2 max-w-[50%] flex-1 min-w-0 flex justify-center items-center h-full">
+          <img src="/About_sir_ma'am.jpg" alt="Founders" className="team-image w-full h-auto max-w-[500px] rounded-[12px] shadow-md object-cover" />
         </div>
-        <div className="video-block basis-1/2 max-w-[50%] flex justify-center items-center h-full">
-          <div className="video-thumbnail relative w-full h-full max-w-[500px]">
-            <img src="/Hero_section_youtube.jpg" alt="Founder Video" className="video-image w-full h-full rounded-[12px] shadow-md object-cover" />
+        <div className="video-block basis-1/2 max-w-[50%] flex-1 min-w-0 flex justify-center items-center h-full">
+          <div className="video-thumbnail relative w-full h-auto max-w-[500px]">
+            <img src="/Hero_section_youtube.jpg" alt="Founder Video" className="video-image w-full h-auto rounded-[12px] shadow-md object-cover" />
             <span className="play-button absolute top-1/2 left-1/2 flex items-center justify-center" style={{transform: 'translate(-50%, -50%)', fontSize: '48px', background: 'rgba(255, 105, 180, 0.8)', borderRadius: '50%', width: '70px', height: '70px', pointerEvents: 'none'}}>
               <svg className="w-10 h-10" fill="white" viewBox="0 0 24 24">
                 <polygon points="9.5,7.5 16.5,12 9.5,16.5" fill="#e91e63" />

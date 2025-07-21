@@ -10,6 +10,7 @@ import Compare_treatment_option_PAE from '../components/Treatment Pages/Compare_
 import What_happens_in_PAE from '../components/Treatment Pages/What_happens_in_PAE';
 import OurDoctor from '../components/home/Ourdoctor';
 import Consultourdoctor from '../components/home/Consultourdoctor';
+import Footer from '../components/layout/Footer';
 
 const PAE_Treatmentpage = () => (
   <>
@@ -24,6 +25,7 @@ const PAE_Treatmentpage = () => (
     <What_happens_in_PAE />
     <OurDoctor />
     <Consultourdoctor />
+    <Footer />
   </>
 ); 
 
