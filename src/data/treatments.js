@@ -9,7 +9,7 @@ export const treatments = [
   'Varicose Veins',
   'Interventional Cardiology',
   'Interventional Neurology',
-  'Interventional Oncology'
+  'Interventional Oncology',
 ];
 
 export default treatments;
